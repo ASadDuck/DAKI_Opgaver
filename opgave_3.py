@@ -21,8 +21,8 @@ while running:
 
     for line in range(12):
         pg.draw.line(screen, "black", (middle.x, middle.y),
-                     (middle.x + 100 * math.cos(math.radians(line*30)),
-                      middle.y + 100 * math.sin(math.radians(line*30))))
+                     (middle.x + 200 * math.cos(math.radians(line*30)),
+                      middle.y + 200 * math.sin(math.radians(line*30))), width=5)
 
 
     pg.display.flip()
