@@ -12,6 +12,8 @@ circ_x = middle.y
 curr_dir_x = 1
 curr_dir_y = 1
 circ_rad = 25
+musen = pg.mouse
+display_list = []
 
 while running:
 
@@ -23,15 +25,15 @@ while running:
     if running == False:
         screen.fill("red")
 
-    circ_x += 2.5 * curr_dir_x
-    if circ_x >= screen.get_width()-circ_rad or circ_x <= 0+circ_rad:
-        curr_dir_x *= -1
 
-    circ_y += 5 * curr_dir_y
-    if circ_y >= screen.get_height()-circ_rad or circ_y <= 0+circ_rad:
-        curr_dir_y *= -1
+    if musen.get_pressed(num_buttons=3)[0]:
+        display_list.append(musen.get_pos())
 
-    pg.draw.circle(screen, "black", (circ_x,circ_y), circ_rad)
+    if musen.get_pressed(num_buttons=3)[2]:
+        display_list.clear()
+
+    for x in display_list:
+        pg.draw.circle(screen, "black", x, circ_rad)
 
 
     pg.display.flip()
