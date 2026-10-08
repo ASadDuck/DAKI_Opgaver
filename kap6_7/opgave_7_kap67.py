@@ -4,6 +4,7 @@ import random
 pg.init()
 screen = pg.display.set_mode((600, 600))
 clock = pg.time.Clock()
+pg.display.set_caption("Uranium Fever")
 running = True
 size = pg.Vector2(25,25)
 playerpos = pg.Vector2(300,300)
@@ -11,6 +12,7 @@ player_speed = 3
 curr_dir = pg.Vector2(0,0)
 uranium = []
 circ_rad = 5
+
 
 while running:
 
